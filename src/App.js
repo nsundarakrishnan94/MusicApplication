@@ -4,7 +4,6 @@ import './App.css';
 import Music from './components/Music'
 import Searchbar from './components/Searchbar'
 import Types from './components/Types';
-import Header from './components/Header';
 import Album from './components/Album';
 import Sidebar from './components/Sidebar';
 import MainBody from './components/MainBody';
