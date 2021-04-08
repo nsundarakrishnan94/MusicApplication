@@ -1,0 +1,79 @@
+.Playlistbtn{
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    background-color: #00C555 ;
+    border-color: #00C555;
+    padding: 10px 8px;
+    border-radius: 7px;
+    font-size: .7rem;
+    font-weight: 600;
+    -webkit-border-radius:;
+    -moz-border-radius:;
+    -ms-border-radius:;
+    -o-border-radius:;
+}
+
+
+#playlistsearchbar{
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    display: inline;
+    margin-bottom: 20px;
+    background-color: #F3F3F3;
+    padding: 8px 20px;
+    border: .5px solid #D0D0D0;
+    border-radius: 20px;
+    width: 50%;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+
+.PlaylistModalSongsWrapper{
+    color: white;
+    margin-top: 100px;
+     width: 90%;
+    margin-left: auto;
+     margin-right: auto;
+    letter-spacing: 1px; 
+    font-weight: 500;
+    font-size: .7rem;
+}
+
+.PlaylistModalSongimg{
+
+}
+
+.PlaylistModalTrackTitleHeading{
+    margin-left: 150px;
+}
+
+.PlaylistModalDurationHeading{
+    margin-left: 225px;
+}
+
+.PlaylistModalSingerHeading{
+    margin-left: 125px;
+}
+
+.PlaylistModalAlbumHeading{
+        margin-left: 200px;
+}
+
+
+.PlaylistModalEachSongContainer{
+    border-bottom: .5px solid rgba(0, 0, 0, .2);
+    cursor: pointer;
+    padding: 10px 0px;
+    margin-left:auto ;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+}

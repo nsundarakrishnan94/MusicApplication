@@ -1,0 +1,22 @@
+.Sidebar-headings{
+    padding: 15px 40px;
+    color: #828282;
+    letter-spacing: 1px; 
+    font-weight: 500;
+    font-size: .7rem;
+    left: 20%;
+
+}
+
+.SidebarContents-container:hover{
+    
+background: linear-gradient(89.52deg, #A0E3BF -2.46%, rgba(160, 227, 191, 0) 42.16%);
+    cursor: pointer;
+    color: #fff;
+}
+
+
+
+.Sidebar-headings:hover{
+    color: #00CA53;
+}

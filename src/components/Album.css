@@ -1,0 +1,117 @@
+
+.AlbumCard{
+    cursor: pointer;
+    position: relative;
+    margin-top: 20px;
+    margin-right: 20px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+/* .AlbumCard:hover{
+    background-color: rgba(0, 0, 0, 0.7);
+} */
+
+.AlbumCard:hover > .PlayCircle{
+   opacity: 1;
+   animation-name: playbtnanimation;
+  animation-duration: 4s;
+   
+} 
+
+
+@keyframes playbtnanimation {
+    0%   { 
+         transform:translateY(-10) ;
+         -webkit-transform:translateY(-10) ; 
+         -moz-transform:translateY(-10) ; 
+         -ms-transform:translateY(-10) ;
+          -o-transform:translateY(-10) ; 
+        }
+
+    100% {
+        transform:translateY(0) ;
+        -webkit-transform:translateY(0) ;
+        -moz-transform:translateY(0) ;
+        -ms-transform:translateY(0) ;
+        -o-transform:translateY(0) ;
+}
+  }
+
+
+
+
+.AlbumImg{
+    margin-right: 0px;
+    margin-bottom: 5%;
+    display: block;
+    width:150px;
+    height: 150px;
+    border-radius: 5px;
+    /*filter: drop-shadow(0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.5));
+    */
+} 
+
+.AlbumTitle{       
+    width : 150px;
+    overflow:hidden;
+    display:inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+    color: #8E8E8E;
+    font-size: .8rem;
+}
+
+h1{
+    font-weight: bolder;
+    display: block;
+}
+
+.Albumlist{
+    position: absolute;
+    top: 15%;
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
+
+.PlayCircle,.MoreVertIcon{
+    
+    opacity: 0;
+    width: 40px;
+    height: 40px;
+    color: rgb(190, 190, 190);
+    left: 5%;
+    bottom: 18%;
+    position: absolute;
+}
+
+.MoreVertIcon{
+    
+    opacity: 0;
+    width: 40px;
+    height: 40px;
+    color: rgb(190, 190, 190);
+    bottom: 18%;
+    left: 82%;
+    position: absolute;
+}
+
+.AlbumCard:hover > .MoreVertIcon{
+    opacity: 1;
+    animation-name: playbtnanimation;
+   animation-duration: 4s;
+    
+ } 

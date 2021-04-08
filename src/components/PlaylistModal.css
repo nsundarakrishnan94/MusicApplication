@@ -1,0 +1,19 @@
+.playlist-modal-container{
+    position: absolute;
+    top: 15%;
+    width: 100%;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    z-index: 100000;
+   
+}
+
+.playlist-modalclosebtn{
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    display: inline;
+    margin-bottom: 20px;
+   
+}

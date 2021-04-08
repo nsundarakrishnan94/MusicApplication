@@ -1,0 +1,19 @@
+#search{
+  position: absolute;
+  right: 8%;
+  top: 8%;
+  display: inline;
+  background-color: #F3F3F3;
+  padding: 8px 20px;
+  border: .5px solid #D0D0D0;
+  border-radius: 20px;
+  width: 20%;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+.searchform{
+  display: inline;
+}

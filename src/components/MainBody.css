@@ -1,0 +1,26 @@
+.MainBody-container{
+    background-color:#F3F3F3;
+    width: 80%;
+    height: 100vh;
+    position: absolute;
+    top: 0; 
+    left: 20%;
+     overflow-x: hidden; 
+     color: #828282;
+    z-index: 0;
+    
+  }
+
+
+  .MainContents{
+    padding-top: 50px;
+  }
+
+
+  .ActiveTitle{
+    position: absolute;
+    left: 4%;
+    font-size: 32px;
+    font-weight: bolder;
+
+  }
