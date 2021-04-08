@@ -25,9 +25,6 @@ function SpecificPlaylist() {
     const [Playlists, setPlaylists] = useState([])
     const [isModalOpen,setisModalOpen]=useState(false);
     
-
-    
-
    
   
       const modalOpen = () => {
@@ -40,15 +37,6 @@ function SpecificPlaylist() {
         setisModalOpen(false);
       }
 
-   
-
-      
- 
-
-
-
-
-
 
 
 
@@ -59,11 +47,8 @@ function SpecificPlaylist() {
 
  const [searchSong, setSearchSong] = useState("");
  const [initialData, setInitialData] = useState(songs);
-  const [data, setData] = useState(songs);
- //const [playlistData,setPlaylistData]=useState({})
-const playlistData=[];
-
-
+const [data, setData] = useState(songs);
+const [playlistData,setplaylistData]=useState([])
 
 
   const handleChange = value => {
@@ -102,28 +87,39 @@ const playlistData=[];
     const songsList=document.getElementsByClassName('SongsList')[0];
 
   useEffect(() => {
-     
+    console.log(playlistData);
+    localStorage.setItem('playlistsongs', playlistData);
+    localStorage.getItem('playlistsongs');
   }, [playlistData])
+
+  
 
 
     const addPlaylistSongHandler=(e) =>{
         
         const domelements = e.target
         console.log(domelements);
+        try{
+         Img=domelements.querySelectorAll(".Img-thumbnail")[0].src;
+         console.log(Img)
          TitleTrack= domelements.querySelectorAll(".TrackTitle")[0].innerHTML.split('<span')[0];
          Duration= domelements.querySelectorAll(".DurationofSong")[0].innerHTML;  
          Artist= domelements.querySelectorAll(".Singer")[0].innerHTML;
          Album= domelements.querySelectorAll(".AlbumName")[0].innerHTML;   
          console.log(TitleTrack,Duration,Img,Artist,Album) ;
-         playlistData.push({
-             Title:TitleTrack,
-             Time:Duration,
-             Singer:Artist,
-             Album:Album
-         });
+         setplaylistData([...playlistData, {
+          Title:TitleTrack,
+          Time:Duration,
+          Singer:Artist,
+          Album:Album,
+          Image:Img
+      }])
+        }
+        catch(e){
+          console.log(e)
+        }
 
          console.log('Sk');
-         console.log(playlistData.length)
          console.log(playlistData)
        
       }
@@ -139,8 +135,10 @@ const playlistData=[];
         </div>
 
         <ul className='SongsWrapper'>
+       
 
             <li className='TitleHeading'>
+                <th className='Songimg'>Image</th>
                 <th className='TrackTitleHeading'>Title</th>
                 <th className='DurationHeading'>Time</th>
                 <th className='SingerHeading'>Artist</th>
@@ -148,17 +146,17 @@ const playlistData=[];
             </li>
             <ul className='SongsList'>
             {
-                playlistData && playlistData.map(playlistsong=>{
-                return   <li className='PlaylistModalEachSongContainer'>
-                    {/* <span className='ImgContainer'> <img src={song.thumbnailUrl} className='Img-thumbnail' alt='thumbnail'/> </span>*/}
-                    <p className='TrackTitle' >{playlistsong.Title.charAt(0).toUpperCase() + playlistsong.Title.slice(1)} <span class="tooltiptext">{playlistsong.Title.charAt(0).toUpperCase() + playlistsong.Title.slice(1)}</span></p>
-                <p className='DurationofSong'>{playlistsong.Time}</p>  
-                <p className='Singer'>{playlistsong.Singer}</p>   
-                <p className='AlbumName'>{ playlistsong.Album}</p>   
-               
-                </li>
+                  playlistData && playlistData.map(playlistsong=>{
+                  return   <li className='PlaylistModalEachSongContainer'>
+                       <span className='ImgContainer'> <img src={playlistsong.Image} className='Img-thumbnail' alt='thumbnail'/> </span>
+                      <p className='TrackTitle' >{playlistsong.Title.charAt(0).toUpperCase() + playlistsong.Title.slice(1)} <span class="tooltiptext">{playlistsong.Title.charAt(0).toUpperCase() + playlistsong.Title.slice(1)}</span></p>
+                  <p className='DurationofSong'>{playlistsong.Time}</p>  
+                  <p className='Singer'>{playlistsong.Singer}</p>   
+                  <p className='AlbumName'>{ playlistsong.Album}</p>   
                 
-                })
+                  </li>
+                  
+                  })
             }
             </ul>
 

@@ -6,8 +6,10 @@ import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 import {CurrentAlbumSelected} from '../App'
 import {AlbumContext,SongsContext} from '../App'
+import {CurrentSongDetails} from '../App'
 // import AddIcon from '@material-ui/icons/Add';
-import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+//import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+import FavoriteIcon from '@material-ui/icons/Favorite';
 let faker = require('faker');
 
 function AlbumSongsList() {
@@ -15,6 +17,7 @@ function AlbumSongsList() {
     const albums=useContext(AlbumContext);
     const songs=useContext(SongsContext);
 
+    const [CurrentTitle, CurrentTime,CurrentImg, setCurrentTime,setCurrentTitle,setCuttentImg] = useContext(CurrentSongDetails);
 
     const [CurrentAlbumId,setCurrentAlbumId] = useContext(CurrentAlbumSelected);
     const [filteredData, setfilteredData] = useState(songs);
@@ -22,6 +25,11 @@ function AlbumSongsList() {
 
     let filteredSongs;
     let albumTitle='';
+
+    let TitleTrack='';
+    let Duration='';
+    let Img;
+
 
 
     const songfilteredData=songs.filter(song=>{
@@ -39,6 +47,43 @@ function AlbumSongsList() {
       return randomNumber.toFixed(2)
   }
   
+
+
+  const eventSongHandler=(e) =>{
+    
+    const domelements = e.target
+    console.log(domelements);
+    try{
+     TitleTrack= domelements.querySelectorAll(".TrackTitle")[0].innerHTML;
+     Duration= domelements.querySelectorAll(".DurationofSong")[0].innerHTML;  
+     Img=  domelements.querySelectorAll(".Img-thumbnail").src;  
+     console.log(Duration) 
+    setCurrentTitle(TitleTrack);
+    setCurrentTime(Duration);
+    setCuttentImg(Img);
+    }
+    catch(e){
+      console.log(e)
+    }
+  }
+
+
+  const colorchangeHandler=(e)=>{
+    console.log('from color change')
+    try{
+    var background = document.getElementsByClassName('AddtoFav').style.backgroundColor;
+    if (background == "rgb(0,202,83)") {
+        document.getElementsByClassName('AddtoFav').style.backgroundColor = "rgb(203,203,203)";
+    } else {
+        document.getElementsByClassName('AddtoFav').style.backgroundColor = "rgb(0,202,83)";
+    }
+  }
+  catch(e){
+    console.log(e)
+  }
+  }
+
+
 
 
     return (
@@ -74,7 +119,7 @@ function AlbumSongsList() {
             </li>
                 {
                   filteredData.map(song=>{
-                   return   <li className='EachSongContainer'>
+                   return   <div className='EachSongContainer' onClick={eventSongHandler}>
                      <span className='ImgContainer'> <img src={song.thumbnailUrl} className='Img-thumbnail' alt='thumbnail'/> </span>
                      <p className='TrackTitle' >{song.title.charAt(0).toUpperCase() + song.title.slice(1)} <span class="tooltiptext">{song.title.charAt(0).toUpperCase() + song.title.slice(1)}</span></p>
                     <p className='DurationofSong'>{randomTimeGenerator()}</p>  
@@ -82,8 +127,8 @@ function AlbumSongsList() {
                     <p className='AlbumName'>{ albums && albums.map(album =>(
                         (album.id===song.albumId) && album.title 
                    )) }</p>   
-                   <FavoriteBorderIcon className='AddtoFav'/> 
-                 </li>
+                   <FavoriteIcon className='AddtoFav' onClick={colorchangeHandler}/> 
+                 </div>
                     
                  })
                 }

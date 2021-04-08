@@ -56,7 +56,7 @@ function Playlists() {
       
         {updateddataPlaylist.map(playlistCategory=>{
           return (
-            <Link to={`/playlists/${playlistCategory.name}`}>
+            <Link style={{ textDecoration: 'none' }} to={`/playlists/${playlistCategory.name}` }>
             <p className='PlaylistItems'>{playlistCategory.name}</p>
             </Link>
             )

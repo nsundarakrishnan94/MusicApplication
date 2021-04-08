@@ -24,21 +24,21 @@ function Sidebar() {
         
          <div className='Sidebar-container'>
          <img alt="timer" className='Img-logo' src='../images/logo.png' />
-         <Link to='/' > 
+         <Link to='/' style={{ textDecoration: 'none' }} > 
          <SidebarContents className='SidebarContents' name='HOME' icon={<HomeIcon/>}/>
         </Link>
-         {/* <Link to='/browse' > 
+         {/* <Link to='/browse' style={{ textDecoration: 'none' }} > 
        <SidebarContents className='SidebarContents' name='BROWSE' icon={<SearchIcon/>} />
         </Link>*/}
 
          <p className='Sidebar-heading'>YOUR LIBRARY</p>
          <hr/>
       {  /* <SidebarContents className='SidebarContents' name='RECENTLY PLAYED' icon={<ScheduleIcon/>} />*/}
-         <Link to='/allsong' > 
+         <Link to='/allsong' style={{ textDecoration: 'none' }} > 
          <SidebarContents className='SidebarContents' name='ALL SONGS'  icon={<LibraryMusicIcon/>}/> 
          </Link>
       {  /* <SidebarContents className='SidebarContents' name='FAVORITE SONGS' icon={<FavoriteIcon/>}/>*/}
-         <Link to='/album'> 
+         <Link to='/album' style={{ textDecoration: 'none' }}> 
          <SidebarContents className='SidebarContents' name='ALBUMS' icon={<AlbumIcon/>}/>
          </Link>
          <p className='Sidebar-heading'>PLAYLIST</p>

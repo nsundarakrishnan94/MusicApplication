@@ -28,6 +28,7 @@
     margin-right: auto;
     display: flex;
     align-items: center;
+    /* pointer-events: none; */
     
 }
 
@@ -54,7 +55,9 @@ height: 40px;
 
 
 .AddtoFav{
-    color: #00CA53;
+    color: #CBCBCB;
+    /* position: absolute;
+    right: 80px; */
 }
 
 

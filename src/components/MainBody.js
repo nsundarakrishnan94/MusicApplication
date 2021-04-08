@@ -6,7 +6,6 @@ import Album from './Album'
 import Home from './Home'
 import {BrowserRouter, Switch,Route} from 'react-router-dom'
 import AlbumSongsList from './AlbumSongsList'
-import Browse from './Browse'
 import {CurrentAlbumSelected} from '../App'
 import SpecificPlaylist from './SpecificPlaylist'
 

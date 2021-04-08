@@ -13,7 +13,12 @@ function Home() {
         return song.albumId== 1;
     })
 
- 
+
+    useEffect(() => {
+        setData(songs);
+      },[songs]);
+  
+
     useEffect(() => {
         setData(songfilteredData);
       }, []);
@@ -24,6 +29,7 @@ function Home() {
 
     return (
         <>
+        {console.log(data)}
         <p className='ActiveTitle'>Home</p> 
         
         <div className='SearchWrapper'>
@@ -50,10 +56,8 @@ function Home() {
       
         <h2 className='HeadingNewlyAdded'>Newly Added</h2>
         <div className='NewlyAddedWrapper'>
- 
-            {data.map(songData=>{
-                console.log(songData);
 
+            {  data.map(songData=>{
                 return <div className='SongCard'>
                     <img src={songData.url} className='NewlyAddedsongImg' alt='image'/>
                     <p className='title'>{songData.title}</p>
